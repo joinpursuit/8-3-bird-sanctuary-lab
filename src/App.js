@@ -1,7 +1,11 @@
+import BirdCardContainer from "./BirdCardContainer";
+import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <BirdCardContainer birdData={birdData} />
     </div>
   );
 };
