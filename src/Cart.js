@@ -22,16 +22,16 @@ class Cart extends React.Component {
     let bonusItemsEarned = [];
 
     if (cost >= 100) {
-      bonusItemsEarned.push(<li>{bonusItems[0]}</li>);
+      bonusItemsEarned.push(<li key={bonusItems[0]}>{bonusItems[0]}</li>);
     }
     if (cost >= 300) {
-      bonusItemsEarned.push(<li>{bonusItems[1]}</li>);
+      bonusItemsEarned.push(<li key={bonusItems[1]}>{bonusItems[1]}</li>);
     }
     if (cost >= 500) {
-      bonusItemsEarned.push(<li>{bonusItems[2]}</li>);
+      bonusItemsEarned.push(<li key={bonusItems[2]}>{bonusItems[2]}</li>);
     }
     if (cost >= 1000) {
-      bonusItemsEarned.push(<li>{bonusItems[3]}</li>);
+      bonusItemsEarned.push(<li key={bonusItems[3]}>{bonusItems[3]}</li>);
     }
 
     console.log("item", bonusItemsEarned);

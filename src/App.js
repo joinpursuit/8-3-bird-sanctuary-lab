@@ -3,6 +3,7 @@ import BirdCardContainer from "./BirdCardContainer";
 import birdData from "./data/birds";
 import bonusItems from "./data/bonusItems";
 import Cart from "./Cart";
+import CheckOut from "./CheckOut";
 
 class App extends React.Component {
   constructor() {
@@ -27,6 +28,14 @@ class App extends React.Component {
     }
   };
 
+  checkOutHandler = (event) => {
+    event.preventDefault();
+    alert("You have adopted birds. Thank you!");
+    this.setState({
+      adoptedBirds: [],
+    });
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -39,6 +48,10 @@ class App extends React.Component {
           birdData={birdData}
           bonusItems={bonusItems}
           adoptedBirds={this.state.adoptedBirds}
+        />
+        <CheckOut
+          adoptedBirds={this.state.adoptedBirds}
+          checkOutHandler={this.checkOutHandler}
         />
       </div>
     );
