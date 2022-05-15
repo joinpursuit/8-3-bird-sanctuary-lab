@@ -17,9 +17,10 @@ const App = () => {
       <article>
         {birdData.map(({ name, img, amount, id }) => (
           <div className='card'>
+            <h4 key={id}>{name}</h4>
+            <p>Price ${amount}</p>
             <img src={img}/>
-            <h4 key={id}> {name} </h4>
-            <p> {amount} </p>
+            <button>Adopt</button>
           </div>
         ))}
       </article>
