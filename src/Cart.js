@@ -1,11 +1,18 @@
 import React from "react";
 
 class Cart extends React.Component {
-  displayAdoptedBirds = (adoptedBirds) => {
-    return adoptedBirds.map((adoptedBird) => {
+  displayAdoptedBirds = (adoptedBirds, removeItemHandler) => {
+    return adoptedBirds.map((adoptedBird, index) => {
       return (
-        <li key={adoptedBird.id}>
+        <li key={index}>
           {adoptedBird.name} ${adoptedBird.amount}
+          <button
+            onClick={() => {
+              removeItemHandler(adoptedBird.id);
+            }}
+          >
+            Remove
+          </button>
         </li>
       );
     });
@@ -34,20 +41,20 @@ class Cart extends React.Component {
       bonusItemsEarned.push(<li key={bonusItems[3]}>{bonusItems[3]}</li>);
     }
 
-    console.log("item", bonusItemsEarned);
+    //console.log("item", bonusItemsEarned);
     return bonusItemsEarned;
   };
 
   render() {
-    const { bonusItems, adoptedBirds } = this.props;
-    console.log(adoptedBirds);
+    const { bonusItems, adoptedBirds, removeItemHandler } = this.props;
+    //console.log(removeItemHandler);
 
     return (
       <div className="Cart">
         <h3>Cart</h3>
         <h5>Discount: {adoptedBirds.length >= 3 ? 10 : 0}%</h5>
         <h4>Total: ${this.totalCost(adoptedBirds)}</h4>
-        <ol>{this.displayAdoptedBirds(adoptedBirds)}</ol>
+        <ol>{this.displayAdoptedBirds(adoptedBirds, removeItemHandler)}</ol>
         <h5>Bonus Items:</h5>
         <ul>{this.bonusItemsHandler(bonusItems, adoptedBirds)}</ul>
       </div>

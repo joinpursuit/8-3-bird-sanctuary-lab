@@ -3,7 +3,7 @@ import React from "react";
 class CheckOut extends React.Component {
   render() {
     const { checkOutHandler } = this.props;
-    console.log(checkOutHandler);
+    //console.log(checkOutHandler);
     return (
       <div className="Checkout">
         <form onSubmit={checkOutHandler}>

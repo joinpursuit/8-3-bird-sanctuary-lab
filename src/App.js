@@ -15,17 +15,10 @@ class App extends React.Component {
 
   adoptHandler = (id, name, amount) => {
     let copyOfAdoptedBirds = [...this.state.adoptedBirds];
-    // console.log(copyOfAdoptedBirdsId);
-    let alreadyAdopted = copyOfAdoptedBirds.some((bird) => {
-      return bird.id === id;
+    copyOfAdoptedBirds.push({ id, name, amount });
+    this.setState({
+      adoptedBirds: copyOfAdoptedBirds,
     });
-
-    if (!alreadyAdopted) {
-      copyOfAdoptedBirds.push({ id, name, amount });
-      this.setState({
-        adoptedBirds: copyOfAdoptedBirds,
-      });
-    }
   };
 
   checkOutHandler = (event) => {
@@ -33,6 +26,21 @@ class App extends React.Component {
     alert("You have adopted birds. Thank you!");
     this.setState({
       adoptedBirds: [],
+    });
+  };
+
+  removeItemHandler = (id) => {
+    console.log(id);
+    let copyOfAdoptedBirds = [...this.state.adoptedBirds];
+    for (let i = 0; i < copyOfAdoptedBirds.length; i++) {
+      if (copyOfAdoptedBirds[i].id === id) {
+        copyOfAdoptedBirds.splice(i, 1);
+        break;
+      }
+    }
+    console.log(copyOfAdoptedBirds);
+    this.setState({
+      adoptedBirds: copyOfAdoptedBirds,
     });
   };
 
@@ -48,6 +56,7 @@ class App extends React.Component {
           birdData={birdData}
           bonusItems={bonusItems}
           adoptedBirds={this.state.adoptedBirds}
+          removeItemHandler={this.removeItemHandler}
         />
         <CheckOut
           adoptedBirds={this.state.adoptedBirds}
