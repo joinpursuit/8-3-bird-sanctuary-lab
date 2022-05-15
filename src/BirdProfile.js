@@ -9,15 +9,17 @@ class BirdProfile extends React.Component {
 	// constructor() {
 	// 	super();
 	// }
+	addToCart = (bird) => {};
 	render() {
 		return (
 			<section>
 				{birdData.map((element) => {
 					return (
-						<div className="Bird">
-							<h3>{element.name}</h3>
+						<div className="birds card">
+							<p>{element.name}</p>
 							<p>Price: ${element.amount}</p>
 							<img src={element.img} alt={element.name} />
+							<button onClick={this.addToCart(element)}>Adopt</button>
 						</div>
 					);
 				})}

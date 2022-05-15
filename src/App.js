@@ -15,8 +15,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Cart />
-				<Checkout />
+				<div className="left">
+					<Cart birds={birdData}/>
+					<Checkout />
+				</div>
 				<BirdProfile birdData={birdData} />
 			</div>
 		);
