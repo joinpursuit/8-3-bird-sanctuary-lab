@@ -45,10 +45,10 @@ class Cart extends React.Component {
     return (
       <div className="Cart">
         <h3>Cart</h3>
-        <h4>Discount: {adoptedBirds.length >= 3 ? 10 : 0}%</h4>
+        <h5>Discount: {adoptedBirds.length >= 3 ? 10 : 0}%</h5>
         <h4>Total: ${this.totalCost(adoptedBirds)}</h4>
         <ol>{this.displayAdoptedBirds(adoptedBirds)}</ol>
-        <h4>Bonus Items:</h4>
+        <h5>Bonus Items:</h5>
         <ul>{this.bonusItemsHandler(bonusItems, adoptedBirds)}</ul>
       </div>
     );
