@@ -1,0 +1,15 @@
+body {}
+main {
+  width: 80%;margin: auto;
+  display: grid;grid-template-columns: 1fr 2fr;gap: 2px;
+}
+main aside {}
+main article {
+  margin: 0;display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: repeat(1fr);gap: 5px;
+}
+main article .card {
+  width: auto;
+}
+main article .card img {
+  width: 100%;
+}
