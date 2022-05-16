@@ -1,35 +1,23 @@
 import React from "react";
 import CartItem from "./CartItem";
 import birdData from "./data/birds";
+//import birdData from "./data/birds";
 
-class BirdProfile extends React.Component {
-	constructor() {
-		super();
-		this.birds = this.props;
-	}
-	// constructor() {
-	// 	super();
-	// }
-	addToCart = (bird) => {
-		return <CartItem name={bird.name} amount={bird.amount} />;
-	};
-	render() {
-		return (
-			<section>
-				{birdData.map((element) => {
-					return (
-						<div className="birds card">
-							<p>{element.name}</p>
-							<p>Price: ${element.amount}</p>
-							<img src={element.img} alt={element.name} />
-							<br />
-							<button onClick={this.addToCart(element)}>Adopt</button>
-						</div>
-					);
-				})}
-			</section>
-		);
-	}
+const BirdProfile = (props) => {
+	const { name, img, amount } = props;
+	return (
+		<div className="birds card">
+			<p>{name}</p>
+			<p>Price: ${amount}</p>
+			<img src={img} alt={name} />
+			<br />
+			<button>Adopt</button>
+		</div>
+	);
+};
+
+const addToCart= (item)=>{
+	
 }
 
 export default BirdProfile;

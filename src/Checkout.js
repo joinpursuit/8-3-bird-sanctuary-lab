@@ -16,8 +16,12 @@ export default class Checkout extends React.Component {
 		const { value } = event.target;
 		console.log(value);
 		if (this.state.valid) {
-			alert("You have adopted birds. Thank You!");
+			alert("You have adopted birds. Thank you!");
 			//after this, clearcart()
+			this.setState({ firstName: "" });
+			this.setState({ lastName: "" });
+			this.setState({ email: "" });
+			this.setState({ zip: 0 });
 		} else {
 			alert("no");
 		}

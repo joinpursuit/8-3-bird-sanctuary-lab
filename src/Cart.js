@@ -1,11 +1,12 @@
 import React from "react";
 import birdData from "./data/birds";
 import CartItem from "./CartItem";
+
 export default class Cart extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			valid: true,
+			discount: false,
 			total: 0,
 		};
 		//this.birds = this.props;
@@ -16,7 +17,7 @@ export default class Cart extends React.Component {
 				<h2>Cart</h2>
 				<ol>
 					<p className="hidden">No items in cart.</p>
-					<CartItem name={birdData[0].name} amount={birdData[0].amount} />
+					{/* <CartItem name={birdData[0].name} amount={birdData[0].amount} /> */}
 					{/* {birdData.map((element) => {
 						return (
 							<li id={element.id}>
