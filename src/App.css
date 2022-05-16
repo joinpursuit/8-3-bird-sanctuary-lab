@@ -1,6 +1,5 @@
 div {
 	background-color: brown;
-	display: grid;
 }
 section {
 	display: grid;
@@ -9,6 +8,7 @@ section {
 	padding: 10px;
 	grid-gap: 9px;
 	justify-content: center;
+	border: 2px solid black;
 }
 img {
 	width: 150px;
@@ -28,4 +28,14 @@ div.left {
 }
 .hidden {
 	visibility: hidden;
+}
+.parent {
+	display: grid;
+	grid-template-columns: 3fr 7fr;
+	grid-template-rows: 1fr 1fr;
+}
+.birds {
+	border: 2px solid blue;
+	justify-content: center;
+	text-align: center;
 }
