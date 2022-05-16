@@ -1,20 +1,22 @@
 import React from "react";
+import "./BirdsAvailable.css";
 
 class BirdsAvailable extends React.Component {
   render() {
-    const { birds } = this.props;
+    const { birds, addToCart } = this.props;
     return (
-      <section>
-        <h1>Welcome to the Bird Shop</h1>
+      <section className="birdmarket">
         {birds.map((bird) => {
           const { name, amount, img, id } = bird;
           return (
-            <article className="birds" key={id}>
+            <article className="bird" key={id}>
               <h3>{name}</h3>
               <p>Price: ${amount}</p>
               <img src={img} alt={name} width="300" height="300" />
               <p>
-                <button type="button">Adopt</button>
+                <button onClick={addToCart} type="button" value={id}>
+                  Adopt
+                </button>
               </p>
             </article>
           );
