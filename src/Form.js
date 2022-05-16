@@ -58,14 +58,9 @@ class Form extends React.Component {
             name="operation"
             onChange={this.selec}
           >
-            <option value=""></option>
-            <option value="sum">sum</option>
-            <option value="average">average</option>
-            <option value="mode">mode</option>
+
           </select>
-          <button type="submit" onClick={this.case}>
-            Calculate
-          </button>
+          <button type="submit" onClick={this.case} />
         </form>
         <div>
           <p>{this.state.input.join()}</p>
