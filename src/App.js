@@ -1,9 +1,10 @@
 import React from "react";
 import BirdCardContainer from "./BirdCardContainer";
-import birdData from "./data/birds";
-import bonusItems from "./data/bonusItems";
 import Cart from "./Cart";
 import CheckOut from "./CheckOut";
+import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -23,14 +24,15 @@ class App extends React.Component {
 
   checkOutHandler = (event) => {
     event.preventDefault();
-    alert("You have adopted birds. Thank you!");
-    this.setState({
-      adoptedBirds: [],
-    });
+    if (this.state.adoptedBirds.length > 0) {
+      alert("You have adopted birds. Thank you!");
+      this.setState({
+        adoptedBirds: [],
+      });
+    }
   };
 
   removeItemHandler = (id) => {
-    console.log(id);
     let copyOfAdoptedBirds = [...this.state.adoptedBirds];
     for (let i = 0; i < copyOfAdoptedBirds.length; i++) {
       if (copyOfAdoptedBirds[i].id === id) {
@@ -38,30 +40,24 @@ class App extends React.Component {
         break;
       }
     }
-    console.log(copyOfAdoptedBirds);
     this.setState({
       adoptedBirds: copyOfAdoptedBirds,
     });
   };
 
   render() {
-    console.log(this.state);
     return (
-      <div>
+      <div className="app">
         <BirdCardContainer
           birdData={birdData}
           adoptHandler={this.adoptHandler}
         />
         <Cart
-          birdData={birdData}
           bonusItems={bonusItems}
           adoptedBirds={this.state.adoptedBirds}
           removeItemHandler={this.removeItemHandler}
         />
-        <CheckOut
-          adoptedBirds={this.state.adoptedBirds}
-          checkOutHandler={this.checkOutHandler}
-        />
+        <CheckOut checkOutHandler={this.checkOutHandler} />
       </div>
     );
   }

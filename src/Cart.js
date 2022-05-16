@@ -41,13 +41,11 @@ class Cart extends React.Component {
       bonusItemsEarned.push(<li key={bonusItems[3]}>{bonusItems[3]}</li>);
     }
 
-    //console.log("item", bonusItemsEarned);
     return bonusItemsEarned;
   };
 
   render() {
     const { bonusItems, adoptedBirds, removeItemHandler } = this.props;
-    //console.log(removeItemHandler);
 
     return (
       <div className="Cart">

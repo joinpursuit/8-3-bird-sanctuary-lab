@@ -5,11 +5,17 @@ class BirdCardContainer extends React.Component {
   render() {
     const { birdData, adoptHandler } = this.props;
 
-    const birdCards = birdData.map((bird) => {
-      return <BirdCard data={bird} key={bird.id} adoptHandler={adoptHandler} />;
+    const birdCards = birdData.map((birdInfo) => {
+      return (
+        <BirdCard
+          birdInfo={birdInfo}
+          key={birdInfo.id}
+          adoptHandler={adoptHandler}
+        />
+      );
     });
 
-    return <div>{birdCards}</div>;
+    return <div className="birdCardContainer">{birdCards}</div>;
   }
 }
 
