@@ -10,9 +10,15 @@ class App extends React.Component {
     this.birdData = this.props
   }
 
-  addToCart = (bird) => {
-    return <CartItem name={bird.name} amount={bird.amount} />
-  }
+  // birbCart = (bird) => {
+  //   return <CartItem name={bird.name} amount={bird.amount} />
+  // }
+
+  birbCart = (bird) => {
+    console.log("...Adding bird:", bird.name);
+    const newCart = [...this.state.cart, bird];
+    this.setState({cart: newCart})
+  };
 
   render(){ return (
     <div className="parent">
