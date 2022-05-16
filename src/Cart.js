@@ -1,5 +1,6 @@
 import React from "react";
-
+import birdData from "./data/birds";
+import CartItem from "./CartItem";
 export default class Cart extends React.Component {
 	constructor() {
 		super();
@@ -7,23 +8,23 @@ export default class Cart extends React.Component {
 			valid: true,
 			total: 0,
 		};
-		this.birds = this.props;
+		//this.birds = this.props;
 	}
 	render() {
 		return (
 			<div className="Cart">
 				<h2>Cart</h2>
 				<ol>
-					<li className="hidden">No items in cart.</li>
-					{this.birds.map((element) => {
+					<p className="hidden">No items in cart.</p>
+					<CartItem name={birdData[0].name} amount={birdData[0].amount} />
+					{/* {birdData.map((element) => {
 						return (
-							<li>
-								{element.name} - ${element.price.toFixed(2)}
+							<li id={element.id}>
+								{element.name} - ${element.amount}
 							</li>
 						);
-					})}
+					})} */}
 				</ol>
-				<p>empty</p>
 				<h4>Total: ${this.state.total.toFixed(2)}</h4>
 			</div>
 		);

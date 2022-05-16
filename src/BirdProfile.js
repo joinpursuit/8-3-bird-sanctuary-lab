@@ -1,4 +1,5 @@
 import React from "react";
+import CartItem from "./CartItem";
 import birdData from "./data/birds";
 
 class BirdProfile extends React.Component {
@@ -9,7 +10,9 @@ class BirdProfile extends React.Component {
 	// constructor() {
 	// 	super();
 	// }
-	addToCart = (bird) => {};
+	addToCart = (bird) => {
+		return <CartItem name={bird.name} amount={bird.amount} />;
+	};
 	render() {
 		return (
 			<section>
@@ -19,6 +22,7 @@ class BirdProfile extends React.Component {
 							<p>{element.name}</p>
 							<p>Price: ${element.amount}</p>
 							<img src={element.img} alt={element.name} />
+							<br />
 							<button onClick={this.addToCart(element)}>Adopt</button>
 						</div>
 					);
