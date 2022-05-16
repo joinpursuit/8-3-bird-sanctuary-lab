@@ -1,8 +1,8 @@
-import React from 'react';
+import react from 'react';
 
 class Cart extends React.Component {
   render() {
-    return <></>;
+    return <>Cart</>;
   }
 }
 

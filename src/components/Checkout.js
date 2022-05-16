@@ -2,7 +2,7 @@ import React from 'react';
 
 class Checkout extends React.Component {
   render() {
-    return <></>;
+    return <>Checkout</>;
   }
 }
 

@@ -1,8 +1,16 @@
 import React from 'react';
-import Cart from './components/Cart';
-import Checkout from './components/Checkout';
-import Birdcards from './components/Birdcards';
-import birdData from './data/birds';
+import Birdcard from './Components/Birdcard';
+import './App.css';
+
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Birdcard />
+      </>
+    );
+  }
+}
 
 // const App = () => {
 //   return (
@@ -12,19 +20,4 @@ import birdData from './data/birds';
 //   );
 // };
 
-class App extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <>
-        <Cart />
-        <Checkout />
-        <Birdcards />
-      </>
-    );
-  }
-}
 export default App;
