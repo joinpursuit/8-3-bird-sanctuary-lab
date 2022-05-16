@@ -1,20 +1,14 @@
-import React from "react";
-//import CartItem from "./CartItem.js";
-
-/*const addToCart = (props) => {
-  <CartItem />;
-};*/
+import "./birdCard.css";
 
 const BirdCard = (props) => {
   return (
-    <li>
+    <div className="birds card">
       <h5>{props.name}</h5>
       <p>{`$${props.amount}`}</p>
       <img src={props.img} alt={`${props.name}`} />
       <button>Adopt</button>
-    </li>
+    </div>
   );
 };
 
-//onClick={() => addToCart(props.id)}
 export default BirdCard;
