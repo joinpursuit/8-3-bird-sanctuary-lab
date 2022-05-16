@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import birdData from "./data/birds";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App birds={birdData} />
   </React.StrictMode>,
   document.getElementById("root")
 );
