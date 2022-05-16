@@ -1,25 +1,15 @@
-import React from "react";
 import BirdCard from "./BirdCard";
-import birdData from "./data/birds";
+import "./birdSection.css";
 
-const BirdSection = () => {
-  const listItems = birdData.map((bird) => {
+function BirdSection({ birds }) {
+  const birdCards = birds.map((bird) => {
     return (
-      <BirdCard
-        key={bird.id}
-        img={bird.img}
-        name={bird.name}
-        amount={bird.amount}
-        id={bird.id}
-      />
+      <li className="birds card" key={bird.id}>
+        <BirdCard name={bird.name} amount={bird.amount} img={bird.img} />
+      </li>
     );
   });
-
-  return (
-    <div>
-      <ul className="card">{listItems}</ul>
-    </div>
-  );
-};
+  return <ul>{birdCards}</ul>;
+}
 
 export default BirdSection;
