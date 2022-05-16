@@ -29,6 +29,8 @@ class App extends React.Component {
       this.setState({
         adoptedBirds: [],
       });
+    } else {
+      alert("You haven't adopted any birds yet!");
     }
   };
 

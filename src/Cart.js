@@ -53,6 +53,7 @@ class Cart extends React.Component {
         <h5>Discount: {adoptedBirds.length >= 3 ? 10 : 0}%</h5>
         <h4>Total: ${this.totalCost(adoptedBirds)}</h4>
         <ol>{this.displayAdoptedBirds(adoptedBirds, removeItemHandler)}</ol>
+        <p>Your donations qualify you for the following items:</p>
         <h5>Bonus Items:</h5>
         <ul>{this.bonusItemsHandler(bonusItems, adoptedBirds)}</ul>
       </div>
