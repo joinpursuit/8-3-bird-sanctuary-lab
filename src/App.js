@@ -14,6 +14,13 @@ class App extends React.Component {
     };
   }
 
+  /**
+   * Update the state with new adopted bird object, each bird object contains property of
+   * id, name , and amount
+   * @param {number} id - id of the bird
+   * @param {String} name - name of the bird
+   * @param {number} amount - price of the bird
+   */
   adoptHandler = (id, name, amount) => {
     let copyOfAdoptedBirds = [...this.state.adoptedBirds];
     copyOfAdoptedBirds.push({ id, name, amount });
@@ -22,6 +29,11 @@ class App extends React.Component {
     });
   };
 
+  /**
+   * After user submit the form, if inputs are valid, alert success purchase, and empty
+   * the cart. Otherwise alert error
+   * @param {Event} event - submit event
+   */
   checkOutHandler = (event) => {
     event.preventDefault();
     if (this.state.adoptedBirds.length > 0) {
@@ -34,6 +46,12 @@ class App extends React.Component {
     }
   };
 
+  /**
+   * Remove the object inside the state array according to the given bird id and update
+   * the state
+   *
+   * @param {number} id - bird id
+   */
   removeItemHandler = (id) => {
     let copyOfAdoptedBirds = [...this.state.adoptedBirds];
     for (let i = 0; i < copyOfAdoptedBirds.length; i++) {

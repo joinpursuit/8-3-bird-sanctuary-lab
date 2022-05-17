@@ -1,6 +1,14 @@
 import React from "react";
 
 class Cart extends React.Component {
+  /**
+   * Display the adopted bird as list item with bird's name and price and remove button
+   * @param {[]Object} adoptedBirds - bird object, each bird object contains property of
+   * id, name , and amount
+   * @param {fn} removeItemHandler - function that remove the adopted object in the state
+   * when the button clicked
+   * @returns an array of list item with bird name , price and a remove button
+   */
   displayAdoptedBirds = (adoptedBirds, removeItemHandler) => {
     return adoptedBirds.map((adoptedBird, index) => {
       return (
