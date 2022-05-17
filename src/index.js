@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import THE_BIRDS from './data/birds';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App birds={THE_BIRDS} />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
