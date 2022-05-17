@@ -1,0 +1,17 @@
+.Cart {
+    border: 2px solid black;
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.Cart:hover {
+    box-shadow: 0 8px 16px 0 rgba(61, 24, 24, 0.7);
+}
+
+.delete-button {
+    border: 0.5px solid black;
+    width: auto;
+    height: auto;
+    margin: 10px 20px;;
+}
