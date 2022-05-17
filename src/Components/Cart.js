@@ -25,7 +25,7 @@ class Cart extends React.Component {
     }
   }
   render() {
-    const { chosenBirds, bonusItems } = this.props;
+    const { chosenBirds, removeFromCart } = this.props;
     return (
       <section className="Cart">
         <h3>Cart</h3>
@@ -36,6 +36,9 @@ class Cart extends React.Component {
             return (
               <li key={idx}>
                 {bird.name} : ${bird.amount}
+                <button type="submit" onClick={() => removeFromCart(bird)}>
+                  Remove Bird
+                </button>
               </li>
             );
           })}
