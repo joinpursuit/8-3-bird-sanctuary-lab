@@ -1,0 +1,11 @@
+#birdHeader {
+    background-color: black;
+  text-align: center;
+  color: orangered;
+}
+
+#widgets {
+    display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 3%;
+};
