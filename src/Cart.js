@@ -1,4 +1,3 @@
-import { remove } from "cypress/types/lodash";
 import React from "react";
 
 class Cart extends React.Component{
@@ -24,7 +23,7 @@ costTotal = (birbsAdopted)=>{
 };
 
   render() {
-    const { items, birbsAdopted, remove } = this.props;
+    const { birbsAdopted, remove } = this.props;
 
     return (
       <div className="Cart">
