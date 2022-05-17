@@ -26,8 +26,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <BirdCard birdData={birdData} addCart={this.addCart} />
         <Cart cart={cart} />
+        <BirdCard birdData={birdData} addCart={this.addCart} />
         <CheckOut />
       </div>
     )
