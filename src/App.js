@@ -18,7 +18,7 @@ class App extends React.Component {
 		return (
 			<div className="parent">
 				<div className="left">
-					<Cart currentCart={this.state.birdsInCart}/>
+					<Cart currentCart={this.state.birdsInCart} />
 					<Checkout />
 				</div>
 				<section>
@@ -32,7 +32,6 @@ class App extends React.Component {
 							/>
 						);
 					})}
-					;
 				</section>
 			</div>
 		);
