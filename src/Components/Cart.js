@@ -24,14 +24,14 @@ class Cart extends react.Component {
 }
 
 function bonusItemsAdder(total) {
-  if (total >= 100 && total <= 300) {
+  if (total >= 100 && total < 300) {
     return (
       <ul>
         <li>{bonusItems[0]}</li>
       </ul>
     );
   }
-  if (total > 300 && total <= 500) {
+  if (total >= 300 && total < 500) {
     return (
       <ul>
         <li>{bonusItems[0]}</li>
@@ -39,7 +39,7 @@ function bonusItemsAdder(total) {
       </ul>
     );
   }
-  if (total > 500 && total <= 1000) {
+  if (total >= 500 && total < 1000) {
     return (
       <ul>
         <li>{bonusItems[0]}</li>
