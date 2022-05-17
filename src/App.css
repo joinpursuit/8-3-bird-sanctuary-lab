@@ -1,0 +1,16 @@
+
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+img {
+  width: 130px;
+  height: 130px;
+}
+
+/* .cart {
+  grid-row: 1;
+} */
