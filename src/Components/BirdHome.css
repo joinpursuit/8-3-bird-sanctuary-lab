@@ -1,0 +1,13 @@
+
+#birdPlace {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.card {
+    color: rgb(142, 219, 40);
+    border: 5px solid rgb(67, 18, 158);
+    background-color: rgb(167, 25, 56);
+}
