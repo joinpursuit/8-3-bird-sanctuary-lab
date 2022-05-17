@@ -3,8 +3,8 @@ import React from 'react';
 class Birdcard extends React.Component {
   render() {
     const { bird, adopter } = this.props;
-    //or i can do {adopter, name, id, img, amount}=this.props.
-
+    // using bird and adopter to get props
+    // The bird card will display its name and price
     return (
       <div className="birds card">
         <h4>{bird.name}</h4>

@@ -7,14 +7,14 @@ class Cart extends React.Component {
     }, 0);
   };
 
-  displaycartOfBirds = (cartOfBirds, deleter) => {
+  displaycartOfBirds = (cartOfBirds, remover) => {
     return cartOfBirds.map((chosenBird, idx) => {
       return (
         <li key={idx}>
           {chosenBird.name} ${chosenBird.amount}
           <button
             onClick={() => {
-              deleter(chosenBird.name);
+              remover(chosenBird.name);
             }}
           >
             Delete this Bird
@@ -35,13 +35,13 @@ class Cart extends React.Component {
   };
 
   render() {
-    const { cartOfBirds, deleter } = this.props;
+    const { cartOfBirds, remover } = this.props;
     return (
       <div className="Cart">
         <h2>Cart</h2>
         <h5>Discount: {this.discounter(cartOfBirds)}%</h5>
         <h4>Total: ${this.totalPrice(cartOfBirds)}</h4>
-        <ol>{this.displaycartOfBirds(cartOfBirds, deleter)}</ol>
+        <ol>{this.displaycartOfBirds(cartOfBirds, remover)}</ol>
       </div>
     );
   }

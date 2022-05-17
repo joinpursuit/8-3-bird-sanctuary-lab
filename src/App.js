@@ -32,7 +32,7 @@ class App extends React.Component {
     }
   };
 // Used if and else statement here so when a user purchases any amount of birds or not it gives this alert message.
-  deleter = (name) => {
+  remover = (name) => {
     let updatedCart = [...this.state.cartOfBirds];
     for (let i = 0; i < updatedCart.length; i++) {
       if (updatedCart[i].name === name) {
@@ -43,14 +43,14 @@ class App extends React.Component {
       cartOfBirds: updatedCart,
     });
   };
-
+//using remover to remove the birds the customers select
   render() {
     return (
       <div className="app">
         <h1>Welcome to Feathered Friends Sanctuary!</h1>
         <p>(Cash and debit only)</p>
         <Birdroom birdData={birdData} adopter={this.adopter} />
-        <Cart cartOfBirds={this.state.cartOfBirds} deleter={this.deleter} />
+        <Cart cartOfBirds={this.state.cartOfBirds} remover={this.remover} />
         <Checkout handleFormSubmit={this.handleFormSubmit} />
       </div>
     );
