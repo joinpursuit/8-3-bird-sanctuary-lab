@@ -2,7 +2,7 @@ import { last } from "cypress/types/lodash";
 import { Component } from "react";
 
 
-class checkout extends Component{
+class Checkout extends Component{
     constructor(){
         super()
     }
@@ -11,12 +11,12 @@ class checkout extends Component{
         return(
             <div className="checkout-container">
                 <form>
-                    <label>First Name </label>
-                    <label>Last Name </label>
-                    <label> Email</label>
-                    <label> Zip Code</label>
+                    <label>First Name </label>;
+                    <label>Last Name </label>;
+                    <label> Email</label>;
+                    <label> Zip Code</label>;
                 </form>
-                    <button onclick> Submit </button>
+                    <button onClick> Submit </button>
             </div>
         )
 

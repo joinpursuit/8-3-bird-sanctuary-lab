@@ -1,4 +1,4 @@
-import data from "./data/birds";
+import data from "../data/birds";
 import { Component } from "react";
 
 class Birdcard extends Component {
