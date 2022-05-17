@@ -9,6 +9,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       cart: [],
+      total: 0,
     }
   }
 
@@ -26,7 +27,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Cart cart={cart} />
+        <Cart cart={cart} total={total} />
         <BirdCard birdData={birdData} addCart={this.addCart} />
         <CheckOut />
       </div>

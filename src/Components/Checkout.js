@@ -7,7 +7,7 @@ class CheckOut extends React.Component {
       firstName: '',
       lastName: '',
       email: '',
-      zipCode: "",
+      zipCode: '',
     }
   }
   handleSubmit = (event) => {
@@ -34,7 +34,6 @@ class CheckOut extends React.Component {
     this.setState({ zipcode: value })
   }
   render() {
-    let { firstName, lastName, email, zipCode } = this.state
     return (
       <div>
         <div>
@@ -46,7 +45,6 @@ class CheckOut extends React.Component {
               id='values'
               name='firstName'
               type='text'
-              value={firstName}
               onChange={this.first}
             />
             <br />
@@ -56,19 +54,12 @@ class CheckOut extends React.Component {
               id='values'
               name='lastName'
               type='text'
-              value={lastName}
               onChange={this.last}
             />
             <br />
             Email
             <br />
-            <input
-              id='values'
-              name='email'
-              type='text'
-              value={email}
-              onChange={this.ema}
-            />
+            <input id='values' name='email' type='text' onChange={this.ema} />
             <br />
             Zip Code
             <br />
@@ -76,7 +67,6 @@ class CheckOut extends React.Component {
               id='values'
               name='email'
               type='number'
-              value={zipCode}
               onChange={this.zipcode}
             />
             <br />
