@@ -13,7 +13,7 @@ class Cart extends React.Component {
         <section className="Cart">
           <h2>Cart</h2>
           <p>Discount: {this.props.discount}%</p>
-          <h4>Total: $ {this.props.total}</h4>
+          <h4>Total: ${this.props.total}</h4>
           <ol>{(this.props.cart).map(obj => {
             return <li key={obj.id}><span>{obj.name} ${obj.amount}</span>
                     <button onClick={() => this.props.handleDelete(obj.id, obj.amount, true)}>X</button> 
