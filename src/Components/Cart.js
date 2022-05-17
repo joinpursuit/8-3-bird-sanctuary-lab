@@ -8,9 +8,17 @@ function Cart({ cart }) {
   })
 
   let sum = 0
-  for (let car of cart) {
-    sum += car.amount
-  }
+  // for (let car of cart) {
+  //   sum += car.amount
+  // }
+
+  let amount = cart.map((bird) => {
+    return bird.amount
+  })
+
+  amount.reduce((a, b) => {
+    return (sum = a + b)
+  }, 0)
 
   return (
     <div className='Cart'>

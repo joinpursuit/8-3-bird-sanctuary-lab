@@ -22,7 +22,7 @@ class App extends React.Component {
 
   render() {
     const { birdData } = this.props
-    const { cart } = this.state
+    const { cart, total } = this.state
 
     return (
       <div>
