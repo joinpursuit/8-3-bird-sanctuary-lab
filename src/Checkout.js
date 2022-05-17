@@ -10,7 +10,7 @@ class Checkout extends React.Component {
       zipCode: 0,
     };
   }
-
+// When the user types the text will be strings and the number will be those datatype
   handleFirstName = (event) => {
     this.setState({ firstName: event.target.value });
   };
@@ -24,7 +24,7 @@ class Checkout extends React.Component {
     this.setState({ zipCode: event.target.value });
   };
 
-
+//Give them state for name, email, and zipcode
 
   render() {
     const { handleFormSubmit } = this.props;
@@ -64,5 +64,5 @@ class Checkout extends React.Component {
     );
   }
 }
-
+//the user will type their info
 export default Checkout;
