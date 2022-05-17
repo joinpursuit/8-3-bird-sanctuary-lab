@@ -1,3 +1,4 @@
+import { remove } from "cypress/types/lodash";
 import React from "react";
 
 class Cart extends React.Component{
@@ -22,25 +23,25 @@ costTotal = (birbsAdopted)=>{
     }, 0)
 };
 
-bonus = (items, birbsAdopted) => {
-    const cost = this.costTotal(birbsAdopted);
-    let itemsEarned = [];
+// bonus = (items, birbsAdopted) => {
+//     const cost = this.costTotal(birbsAdopted);
+//     let itemsEarned = [];
 
-    if (cost >= 100) {
-      itemsEarned.push(<li key={items[0]}>{items[0]}</li>);
-    }
-    if (cost >= 300) {
-      itemsEarned.push(<li key={items[1]}>{items[1]}</li>);
-    }
-    if (cost >= 500) {
-      itemsEarned.push(<li key={items[2]}>{items[2]}</li>);
-    }
-    if (cost >= 1000) {
-      itemsEarned.push(<li key={items[3]}>{items[3]}</li>);
-    }
+//     if (cost >= 100) {
+//       itemsEarned.push(<li key={items[0]}>{items[0]}</li>);
+//     }
+//     if (cost >= 300) {
+//       itemsEarned.push(<li key={items[1]}>{items[1]}</li>);
+//     }
+//     if (cost >= 500) {
+//       itemsEarned.push(<li key={items[2]}>{items[2]}</li>);
+//     }
+//     if (cost >= 1000) {
+//       itemsEarned.push(<li key={items[3]}>{items[3]}</li>);
+//     }
 
-    return itemsEarned;
-  };
+//     return itemsEarned;
+//   };
 
   render() {
     const { items, birbsAdopted, removeItemHandler } = this.props;
@@ -50,10 +51,7 @@ bonus = (items, birbsAdopted) => {
         <h3>Cart</h3>
         <h5>Discount: {birbsAdopted.length >= 3 ? 10 : 0}%</h5>
         <h4>Total: ${this.totalCost(birbsAdopted)}</h4>
-        <ol>{this.displaybirbsAdopted(birbsAdopted, removeItemHandler)}</ol>
-        <p>Your donations qualify you for the following items:</p>
-        <h5>Bonus Items:</h5>
-        <ul>{this.itemsHandler(items, birbsAdopted)}</ul>
+        <ol>{this.birbsAdopted(birbsAdopted, remove)}</ol>
       </div>
     );
   }
