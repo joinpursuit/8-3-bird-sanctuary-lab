@@ -1,6 +1,6 @@
 import React from 'react';
 import birdData from '../data/birds';
-import BirdCards from './BirdBox';
+import BirdBox from '../Components/BirdBox';
 
 const Cart = (props) => {
   const display = (birds) => {
@@ -48,7 +48,7 @@ const Cart = (props) => {
       <h4>Total: ${`100`}</h4>
       <ol>{display(props.addBird)}</ol>
       <ul>{handleBonus(props.addBird)}</ul>
-      <BirdCards />
+      <BirdBox />
     </div>
   );
 };

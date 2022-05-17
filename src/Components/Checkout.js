@@ -1,52 +1,26 @@
-import React from 'react';
+import React from "react";
 
 class Checkout extends React.Component {
-    constructor () {
-        super();
-        this.state = {
-            firstName: "",
-            lastName: "",
-            email: "",
-            zipCode: "",
-        }
-    }
-
-    handleFirstName = (event) => {
-        this.setState({ firstName: event.target.value })
-    }
-
-    handleLastName = (event) => {
-        this.setState({ lastName: event.target.value })
-    }
-
-    handleEmail = (event) => {
-        this.setState({ email: event.target.value})
-    }
-
-    handleZipCode = (event) => {
-        this.setState({ zipCode: event.target.value})
-    }
-
-    render () {
-        const { handleCheckout } = this.props
-
-	return (
-		<div className='Checkout'>
-			<form onSubmit={handleCheckout}>
-				<label>First Name</label>
-				<input type='text' id="firstName" name="firstName" required onChange={this.handleFirstName}></input>
-				<label>Last Name</label>
-				<input type='text' id="lastName" name="lastName" required onChange={this.handleLastName}></input>
-				<label>Email</label>
-				<input type='text' id="email" name="email" required onChange={this.handleEmail}></input>
-                <label>Zip Code</label>
-                <input type="text" id="zipCode" name="zipCode" required onChange={this.handleZipCode}></input>
-				<input type='submit' value='Submit'></input>
-
-			</form>
-		</div>
-	);
-    }
-    }
+  render() {
+    const { handleFormSubmit } = this.props;
+    return (
+      <div className="Checkout">
+        <h4>Checkout</h4>
+        <form onSubmit={handleFormSubmit}>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName"></input>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName"></input>
+          <label for="email">Email Address</label>
+          <input name="email" id="email" type="email"></input>
+          <label for="zip">Zip Code</label>
+          <input id="zip" name="zip" type="number"></input>
+          <br></br>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    );
+  }
+}
 
 export default Checkout;
