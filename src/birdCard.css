@@ -1,0 +1,16 @@
+.card {
+    background-color:lightskyblue;
+    border: 1px solid white;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+}
+img {
+    max-height: 50%;
+    max-width: 50%;
+}
+
+.button {
+    position: relative;
+}
