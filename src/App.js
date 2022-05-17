@@ -16,13 +16,17 @@ class App extends Component {
    * Append the selected bird to the end of the cart array.
    * @param {Object} bird
    */
-  appendToCart = (bird) => {};
+  appendToCart = (bird) => {
+    const cartInstance = [...this.state.cart, bird];
+    this.setState({ cart: cartInstance });
+  };
   render() {
     const { birds } = this.props;
     return (
-      <main>
-        <section></section>
-        <section className='BirdPanel'>
+      <main className='Main'>
+        <section className='birdPanel'>
+          <Cart cart={this.state.cart} />
+
           <AllBirds birds={birds} appendToCart={this.appendToCart} />
         </section>
       </main>

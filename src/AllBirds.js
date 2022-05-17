@@ -6,7 +6,7 @@ function displayAllBirds({ appendToCart }) {
       <Birdcard bird={bird} appendToCart={() => appendToCart(bird)} />
     </li>
   ));
-  return <ul className='card'>{birdArray}</ul>;
+  return <ul className='birdCaardPanel'>{birdArray}</ul>;
 }
 
 export default displayAllBirds;

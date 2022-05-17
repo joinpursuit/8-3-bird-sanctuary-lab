@@ -1,11 +1,20 @@
-function Cart({ discount, total }) {
+function Cart({ discount, total, cart }) {
+  const cartItems = cart.map((bird) => {
+    return (
+      <li>
+        {bird.name}: ${bird.amount}
+      </li>
+    );
+  });
   return (
-    <div className='birdCart'>
+    <aside className='birdCart'>
       <h2>Cart</h2>
       <h3>Discount: {discount}%</h3>
       <h4>Total: ${total}</h4>
+      <ol className='cartList'>{cartItems}</ol>
       <p> Your donations qualify you for the following:</p>
-    </div>
+      <ul></ul>
+    </aside>
   );
 }
 export default Cart;
