@@ -14,7 +14,7 @@ class Checkout extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    // >> Validating the fields
+    // >> Validating all the fields
     if(this.state.isValid) {
       alert('You have adopted birds. Thank you!');
       this.handleFormReset();
@@ -46,6 +46,7 @@ class Checkout extends React.Component {
       });
     }
   }
+
   handleTextLastNameChange = (event) => {
     const { value } = event.target;
     if (value !== ''){
@@ -55,6 +56,7 @@ class Checkout extends React.Component {
       });
     }
   }
+
   handleTextEmailChange = (event) => {
     const { value } = event.target;
     if (value !== ''){
@@ -64,6 +66,7 @@ class Checkout extends React.Component {
       });
     }
   }
+
   handleTextZipCodeChange = (event) => {
     const { value } = event.target;
     if (value !== ''){
@@ -118,7 +121,6 @@ class Checkout extends React.Component {
       </>
     )
   };
-
 }
 
 export default Checkout;

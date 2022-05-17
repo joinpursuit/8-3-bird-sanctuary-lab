@@ -1,17 +1,15 @@
 import React from "react";
-//import DataSource from "./Components/Birdcards";
 import Cart from "./Components/Cart.js";
 import Checkout from "./Components/Checkout.js";
 import birdData from "./data/birds.js";
 
 import "./App.css";
 
-
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      count: 1,
+      count: 0,
       discount: 0,
       total: 0,
       cart: [],
@@ -34,6 +32,12 @@ class App extends React.Component {
     return (count >= 3 && total > 100) ? 10 : 0;
   }
 
+  recalculateDiscount = (count, total) => {
+    this.setState({
+      discount: this.checkDiscount(count, total),
+    });
+  }
+
   handleDelete = (itemId, itemAmount, remove) => {
     if(remove) {
       const newCart = this.state.cart.filter(item => item.id !== itemId);
@@ -41,13 +45,13 @@ class App extends React.Component {
         cart: newCart,
         total: this.state.total - itemAmount,
         count: this.state.count - 1,
-      });
+        // >> Calling a callback function to recalculate discount 
+      }, () => this.recalculateDiscount(this.state.count, this.state.total));
     }
-    this.checkDiscount(this.state.count, this.state.total);
+
   };
 
   checkoutValid = (data) => {
-    //console.log(childdata)
     if(data) {
       this.setState({ 
         cart: [],
@@ -82,7 +86,6 @@ class App extends React.Component {
                   discount: this.checkDiscount(this.state.count, this.state.total),
                 });
                 this.addToCart(newObj)
-                //this.checkBonus(this.state.count)
               }}>Adopt</button>
           </div>
         ))}

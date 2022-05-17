@@ -7,8 +7,6 @@ class Cart extends React.Component {
     super(props);
   }
 
-  
-
   render() {
     return(
       <>
@@ -22,6 +20,7 @@ class Cart extends React.Component {
                    </li>})}
           </ol>
           <p>Your donations has qualified for the following items</p>
+          {/* >> Validating bonus items */}
           <ul>
             {this.props.total >= 100 && <li>{bonusItems[0]}</li>}
             {this.props.total >= 300 && <li>{bonusItems[1]}</li>}
