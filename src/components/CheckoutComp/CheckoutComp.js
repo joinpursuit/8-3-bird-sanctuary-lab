@@ -19,56 +19,35 @@ class CheckoutComp extends Component {
     const { firstName, lastName, email, zip } = this.state;
 
     if (firstName && lastName && email && zip) {
+      this.clearForms();
       alert("You have adopted birds. Thank you!");
+    } else {
+      alert("Please fill in the form completely.");
     }
+  };
 
-    this.clearForms();
+  handleChange = (e) => {
+    let { name, value } = e.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  zipCodeInput = (e) => {
+    const { value } = e.target;
+
+    this.setState({
+      zip: value,
+    });
   };
 
   clearForms = () => {
     this.setState({
       firstName: "",
-    });
-    this.setState({
       lastName: "",
-    });
-    this.setState({
       email: "",
-    });
-    this.setState({
       zip: "",
-    });
-  };
-
-  firstNameInput = (e) => {
-    let { value } = e.target;
-
-    this.setState({
-      firstName: value,
-    });
-  };
-
-  lastNameInput = (e) => {
-    let { value } = e.target;
-
-    this.setState({
-      lastName: value,
-    });
-  };
-
-  emailInput = (e) => {
-    let { value } = e.target;
-
-    this.setState({
-      email: value,
-    });
-  };
-
-  zipCodeInput = (e) => {
-    let { value } = e.target;
-
-    this.setState({
-      zip: value,
     });
   };
 
@@ -76,8 +55,8 @@ class CheckoutComp extends Component {
     const { firstName, lastName, email, zip } = this.state;
 
     return (
-      <section id="checkoutSection">
-        <form className="checkoutForm" onSubmit={this.formSubmitted}>
+      <section className="checkoutSection Checkout">
+        <form onSubmit={this.formSubmitted}>
           <h2>Checkout</h2>
 
           <label htmlFor="firstName">
@@ -86,7 +65,7 @@ class CheckoutComp extends Component {
               type="text"
               name="firstName"
               id="firstName"
-              onChange={this.firstNameInput}
+              onChange={this.handleChange}
               value={firstName}
             />
           </label>
@@ -97,7 +76,7 @@ class CheckoutComp extends Component {
               type="text"
               name="lastName"
               id="lastName"
-              onChange={this.lastNameInput}
+              onChange={this.handleChange}
               value={lastName}
             />
           </label>
@@ -108,7 +87,7 @@ class CheckoutComp extends Component {
               type="text"
               name="email"
               id="email"
-              onChange={this.emailInput}
+              onChange={this.handleChange}
               value={email}
             />
           </label>
@@ -127,7 +106,6 @@ class CheckoutComp extends Component {
           <br></br>
 
           <input
-            className="Checkout"
             type="submit"
             value="Submit"
             onClick={this.props.handleSubmit}

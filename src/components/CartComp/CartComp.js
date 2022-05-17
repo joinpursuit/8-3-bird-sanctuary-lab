@@ -79,7 +79,7 @@ class CartComp extends Component {
       bonusToAdd.push(bonusItems[0], bonusItems[1], bonusItems[2]);
     }
 
-    if (total > 1000) {
+    if (total >= 1000) {
       for (const bonus of bonusItems) {
         bonusToAdd.push(bonus);
       }
@@ -99,7 +99,6 @@ class CartComp extends Component {
     return (
       <section className="cartSection Cart">
         <h2>Cart</h2>
-        {/* {this.addDiscount(cartArr)} */}
         {this.addTotal(cartArr)}
         <ol className="birdList">{this.addBirdToCart(cartArr)}</ol>
         <p>
