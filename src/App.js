@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       birbsInCart: [],
     }
-
+  }
   // birbCart = (bird) => {
   //   return <CartItem name={bird.name} amount={bird.amount} />
   // }
@@ -31,12 +31,11 @@ class App extends React.Component {
     evt.preventDefault();
     if (this.state.birbsInCart.length > 0) {
       alert("You have adopted birds. Thank You!");
-      this.setState({birbsInCart});
+      this.setState({birbsInCart: [],});
     } else {
       alert("You haven't adopted any birds yet!");
     }
   }
-}
 
   removeBirb = (id) => {
     let birbCopys = [...this.state.birbsInCart];
@@ -65,5 +64,6 @@ class App extends React.Component {
   );
   }
 };
+
 
 export default App;
