@@ -21,7 +21,7 @@ class Cart extends React.Component {
     } else if (this.sumCart() >= 100) {
       return bonusItems.slice(0, 1);
     } else {
-      return bonusItems.slice(0, 0);
+      return [];
     }
   }
   render() {

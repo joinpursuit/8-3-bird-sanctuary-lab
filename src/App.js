@@ -13,13 +13,9 @@ class App extends React.Component {
     };
   }
 
-  addToCart = (e) => {
-    const { value } = e.target;
+  addToCart = (obj) => {
     this.setState({
-      chosenBirds: [
-        ...this.state.chosenBirds,
-        birdData.find((bird) => bird.id === Number(value)),
-      ],
+      chosenBirds: [...this.state.chosenBirds, obj],
     });
   };
 
