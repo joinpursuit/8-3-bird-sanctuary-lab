@@ -1,0 +1,1 @@
+import displaySingleBird from './BirdCard';
