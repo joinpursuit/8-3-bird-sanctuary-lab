@@ -39,7 +39,7 @@ bonus = (items, birbsAdopted) => {
       itemsEarned.push(<li key={items[3]}>{items[3]}</li>);
     }
 
-    return items;
+    return itemsEarned;
   };
 
   render() {

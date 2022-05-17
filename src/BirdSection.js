@@ -1,12 +1,12 @@
-import BirdCard from "./BirdCard"
+import React from "react";
 
 function BirdGallery({birds, cart}) {
-    const birdCards = birds.map((birds) => (
+    const birbCards = birds.map((birds) => (
     <li key={birds.id}>
-        <Birdcard bird={birds} cart={() => cart(birds)} />
+        <birdcard bird={birds} cart={() => cart(birds)} />
     </li>
   ));
-    return <ul className="bird-gallery">{birdCards}</ul>
+    return <ul className="bird-gallery">{birbCards}</ul>
 };
     
 

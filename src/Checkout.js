@@ -9,20 +9,20 @@ class Checkout extends React.Component {
         last: "",
         email: "",
         zip: "",
-      }
+      };
     }
 
     firstName = (evt) =>{
         this.setState({first: evt.target.value});
     }
 
-    handleSubmission = (evt) => {
-        evt.preventDefault();
-        const {value} = evt.target
-        if (this.state.valid) {
-            "You have adopted birds."
-        }
-    }
+    // handleSubmission = (evt) => {
+    //     evt.preventDefault();
+    //     const {value} = evt.target
+    //     if (this.state.valid) {
+    //         "You have adopted birds."
+    //     }
+    // }
 
     lastName = (evt) =>{
         this.setState({last: evt.target.value});
