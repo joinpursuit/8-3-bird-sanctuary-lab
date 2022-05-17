@@ -1,3 +1,4 @@
+import birdData from './data/birds';
 function Cart({ discount, total, cart }) {
   const cartItems = cart.map((bird) => {
     return (

@@ -4,7 +4,7 @@ function Birdcard({ bird: { name, amount, img }, appendToCart }) {
       <h3>{name}</h3>
       <p>Price: ${amount}</p>
       <img src={img} alt={name} />
-      <button className='birds button' onClick={appendToCart}>
+      <button className='birds' onClick={appendToCart}>
         Adopt
       </button>
     </div>
