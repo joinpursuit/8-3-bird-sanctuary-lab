@@ -1,7 +1,16 @@
+import "./App.scss";
+
+import BirdComp from "./components/BirdComp/BirdComp";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <header id="birdHeader">
+        <h1 id="testing">Bird Sanctuary</h1>
+      </header>
+      <section id="widgets">
+        <BirdComp />
+      </section>
     </div>
   );
 };
