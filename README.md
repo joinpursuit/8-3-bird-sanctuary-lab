@@ -54,7 +54,7 @@ Your react app should be made up of a minimum of 3 components:
 
 - bird card(s)
 - checkout
-- cart
+- cartgit 
 
 ### Birds
 
