@@ -24,19 +24,19 @@ costTotal = (birbsAdopted)=>{
 
 bonus = (items, birbsAdopted) => {
     const cost = this.costTotal(birbsAdopted);
-    let items = [];
+    let itemsEarned = [];
 
     if (cost >= 100) {
-      items.push(<li key={items[0]}>{items[0]}</li>);
+      itemsEarned.push(<li key={items[0]}>{items[0]}</li>);
     }
     if (cost >= 300) {
-      items.push(<li key={items[1]}>{items[1]}</li>);
+      itemsEarned.push(<li key={items[1]}>{items[1]}</li>);
     }
     if (cost >= 500) {
-      items.push(<li key={items[2]}>{items[2]}</li>);
+      itemsEarned.push(<li key={items[2]}>{items[2]}</li>);
     }
     if (cost >= 1000) {
-      items.push(<li key={items[3]}>{items[3]}</li>);
+      itemsEarned.push(<li key={items[3]}>{items[3]}</li>);
     }
 
     return items;

@@ -1,6 +1,5 @@
 import React from "react";
 import birdData from "./data/birds";
-import bonusItems from "./data/bonusItems";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import BirdSection from "./BirdSection";
@@ -9,10 +8,8 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
- birbsInCart: [],
+      birbsInCart: [],
     }
-    this.birdData = this.props
-  }
 
   // birbCart = (bird) => {
   //   return <CartItem name={bird.name} amount={bird.amount} />
@@ -39,6 +36,7 @@ class App extends React.Component {
       alert("You haven't adopted any birds yet!");
     }
   }
+}
 
   removeBirb = (id) => {
     let birbCopys = [...this.state.birbsInCart];
@@ -62,7 +60,6 @@ class App extends React.Component {
         <Cart bonusItems={bonusItems} birbsInCart={this.state.birbsInCart} removeBirb={this.removeBirb}/>
         <Checkout />
         </div>
-        <BirdProfile birdData ={this.props} />
       <Checkout checkingOut={this.checkingOut} />
     </div>
   );
