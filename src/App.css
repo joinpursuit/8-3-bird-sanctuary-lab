@@ -1,0 +1,46 @@
+h2 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.Cart {
+  grid-column: 1;
+  grid-row: 1/2;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.Checkout {
+  grid-column: 1;
+  grid-row: 2/3;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.birds {
+  background-color: rgb(228, 245, 242);
+  border: 1px solid black;
+  padding: 5px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 5px;
+}
+
+.button {
+  color: black;
+  border-color: black;
+  width: 75%;
+}
