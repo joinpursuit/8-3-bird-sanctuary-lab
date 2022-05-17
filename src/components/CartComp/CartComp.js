@@ -40,16 +40,23 @@ class CartComp extends Component {
 
   addTotal = (cartArr) => {
     let totalAmount = 0;
+    let discount = 0;
 
     for (const price of cartArr) {
       totalAmount += price.amount;
     }
 
-    if (!Number(totalAmount)) {
-      return <h4>Total: $0</h4>;
-    } else {
-      return <h4>Total: ${totalAmount}</h4>;
+    if (cartArr.length > 3) {
+      discount = 10;
+      totalAmount -= totalAmount * 0.1;
     }
+
+    return (
+      <div>
+        <h5>Discount: {discount}%</h5>
+        <h4>Total: ${totalAmount}</h4>
+      </div>
+    );
   };
 
   addBonuses = (cartArr) => {
@@ -86,23 +93,13 @@ class CartComp extends Component {
     return bonuses;
   };
 
-  addDiscount = (cartArr) => {
-    let discount = 0;
-
-    if (cartArr.length > 3) {
-      discount = 10;
-    }
-
-    return <h5>Discount: {discount}%</h5>;
-  };
-
   render() {
     const { cartArr } = this.props;
 
     return (
       <section className="cartSection Cart">
         <h2>Cart</h2>
-        {this.addDiscount(cartArr)}
+        {/* {this.addDiscount(cartArr)} */}
         {this.addTotal(cartArr)}
         <ol className="birdList">{this.addBirdToCart(cartArr)}</ol>
         <p>
