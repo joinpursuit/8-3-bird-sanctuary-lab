@@ -1,5 +1,4 @@
 #birdSection {
-  border: 5px solid blue;
   text-align: center;
   grid-column: 2;
   grid-row: 1/span 2;
@@ -8,15 +7,15 @@
   gap: 2em;
 }
 
-.birdArticle.card.birds {
+.birds.card {
   background-color: aquamarine;
   box-shadow: 5px 5px 5px black;
 }
-.birdArticle.card.birds img {
+.birds.card img {
   width: 100%;
   height: 100%;
 }
-.birdArticle.card.birds Button {
+.birds.card Button {
   margin-top: 3%;
   width: 100%;
 }

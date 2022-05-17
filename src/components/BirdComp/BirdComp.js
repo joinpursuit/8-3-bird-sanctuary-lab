@@ -18,17 +18,13 @@ class BirdComp extends Component {
   renderBirdData = (birdsData) => {
     return birdsData.map((bird) => {
       return (
-        <article className="birdArticle card birds" key={bird.id}>
+        <article className="birds card" key={bird.id}>
           <p>
             <strong>{bird.name}</strong>
           </p>
           <p>Price: ${bird.amount}</p>
           <img src={bird.img} alt="bird"></img>
-          <Button
-            className="birds"
-            variant="dark"
-            onClick={() => this.clickedAdopt(bird)}
-          >
+          <Button variant="dark" onClick={() => this.clickedAdopt(bird)}>
             ADOPT
           </Button>
         </article>
@@ -37,11 +33,17 @@ class BirdComp extends Component {
   };
 
   clickedAdopt = (bird) => {
-    let newArr = this.state.cartArr;
-    newArr.push(bird);
+    let newCart = this.state.cartArr;
+    newCart.push(bird);
 
     this.setState({
-      cartArr: newArr,
+      cartArr: newCart,
+    });
+  };
+
+  handleSubmit = () => {
+    this.setState({
+      cartArr: [],
     });
   };
 
@@ -52,7 +54,7 @@ class BirdComp extends Component {
       <>
         <CartComp cartArr={cartArr} />
         <section id="birdSection">{this.renderBirdData(birdsData)}</section>
-        <CheckoutComp />
+        <CheckoutComp handleSubmit={this.handleSubmit} />
       </>
     );
   }

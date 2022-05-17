@@ -1,10 +1,10 @@
 #birdHeader {
-  border: 5px solid red;
+  background-color: black;
   text-align: center;
+  color: orangered;
 }
 
 #widgets {
-  border: 5px solid purple;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 3%;
