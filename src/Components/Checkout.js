@@ -1,0 +1,84 @@
+import React from 'react';
+
+class Checkout extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			firstName: '',
+			lastName: '',
+			email: '',
+			zipCode: '',
+		};
+	}
+	handleFormSubmit = (event) => {
+		event.preventDefault();
+		if (this.state) {
+			alert('You have adopted birds. Thank you!');
+			this.setState({
+				savedBirds: [],
+			});
+		}
+	};
+
+	handleFirstName = (event) => {
+		this.setState({ firstName: event.target.value });
+	};
+
+	handleLastName = (event) => {
+		this.setState({ lastName: event.target.value });
+	};
+
+	handleEmail = (event) => {
+		this.setState({ email: event.target.value });
+	};
+
+	handleZipCode = (event) => {
+		this.setState({ zipCode: event.target.value });
+	};
+
+	render() {
+		const { handleCheckout } = this.props;
+
+		return (
+			<div className='Checkout'>
+				<form onSubmit={handleCheckout}>
+					<label>First Name</label>
+					<input
+						type='text'
+						id='firstName'
+						name='firstName'
+						required
+						onChange={this.handleFirstName}
+					></input>
+					<label>Last Name</label>
+					<input
+						type='text'
+						id='lastName'
+						name='lastName'
+						required
+						onChange={this.handleLastName}
+					></input>
+					<label>Email</label>
+					<input
+						type='text'
+						id='email'
+						name='email'
+						required
+						onChange={this.handleEmail}
+					></input>
+					<label>Zip Code</label>
+					<input
+						type='text'
+						id='zipCode'
+						name='zipCode'
+						required
+						onChange={this.handleZipCode}
+					></input>
+					<input type='submit' value='Submit'></input>
+				</form>
+			</div>
+		);
+	}
+}
+
+export default Checkout;
