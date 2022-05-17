@@ -2,6 +2,10 @@ import react from "react";
 import bonusItems from "../data/bonusItems";
 
 class Cart extends react.Component {
+  handleClick(event) {
+    event.target.parentNode.remove();
+  }
+
   render() {
     let adoptedBirdsArray = this.props.adoptedBirdsArray;
     let birdCost = this.props.birdCost;
@@ -13,7 +17,11 @@ class Cart extends react.Component {
         <h4>Total: ${birdCost}</h4>
         <ol>
           {adoptedBirdsArray.map((bird) => (
-            <li>{bird}</li>
+            <li>
+              <button onClick={(event) => this.handleClick(event)}>
+                {bird}
+              </button>
+            </li>
           ))}
         </ol>
         <p>Your donations have qualified you for the following items:</p>
