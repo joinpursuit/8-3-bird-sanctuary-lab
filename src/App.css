@@ -1,0 +1,10 @@
+img {
+    height: 200px;
+    width: 200px;
+}
+
+body{
+    display: grid;
+    background-color: lightblue;
+   
+}
