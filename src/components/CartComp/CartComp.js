@@ -93,7 +93,7 @@ class CartComp extends Component {
       discount = 10;
     }
 
-    return <h4>Discount: {discount}%</h4>;
+    return <h5>Discount: {discount}%</h5>;
   };
 
   render() {
