@@ -8,9 +8,6 @@ function Cart({ cart }) {
   })
 
   let sum = 0
-  // for (let car of cart) {
-  //   sum += car.amount
-  // }
 
   let amount = cart.map((bird) => {
     return bird.amount
@@ -20,11 +17,12 @@ function Cart({ cart }) {
     return (sum = a + b)
   }, 0)
 
+
   return (
     <div className='Cart'>
       <h2>Cart</h2>
       <h4>Discount:</h4>
-      <h4>Total:{sum}</h4>
+      <h4>Total:${sum}</h4>
       <ol>{cartItems}</ol>
     </div>
   )
