@@ -1,0 +1,21 @@
+.bird-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 20px;
+  box-shadow: 5px 5px 5px black;
+  margin: 10px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+}
+
+button {
+  background-color: lightcoral;
+}
