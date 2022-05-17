@@ -36,7 +36,7 @@ class App extends React.Component {
             />
           );
         })}
-        <Cart addBird={this.state.adoptedBirds} bonus={bonusItems} />
+        <Cart someBird={this.state.adoptedBirds} bonus={bonusItems} />
         <Checkout className='Check-out' />
       </>
     );

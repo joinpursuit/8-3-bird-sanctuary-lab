@@ -1,4 +1,5 @@
 import React from 'react';
+
 import BirdBox from '../Components/BirdBox';
 
 const Cart = (props) => {
@@ -45,8 +46,8 @@ const Cart = (props) => {
   return (
     <div className='birds Cart'>
       <h4>Total: ${`100`}</h4>
-      <ol>{display(props.addBird)}</ol>
-      <ul>{handleBonus(props.addBird)}</ul>
+      <ol>{display(props.someBird)}</ol>
+      <ul>{handleBonus(props.someBird)}</ul>
       <BirdBox />
     </div>
   );
