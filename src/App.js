@@ -13,6 +13,7 @@ class App extends React.Component {
     };
   }
 
+  // thanks for the idea of creating a copy cart, Myra.
   adopter = (id, amount, name) => {
     let newCart = [...this.state.cartOfBirds];
     newCart.push({ id, amount, name });
@@ -20,6 +21,8 @@ class App extends React.Component {
       cartOfBirds: newCart,
     });
   };
+
+  // check if the cart is empty. if not, display success message
   handleFormSubmit = (e) => {
     e.preventDefault();
     if (this.state.cartOfBirds.length > 0) {
@@ -32,6 +35,7 @@ class App extends React.Component {
     }
   };
 
+  // tough logic here.
   deleter = (name) => {
     let updatedCart = [...this.state.cartOfBirds];
     for (let i = 0; i < updatedCart.length; i++) {

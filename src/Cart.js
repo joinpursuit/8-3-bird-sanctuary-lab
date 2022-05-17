@@ -2,12 +2,15 @@ import React from 'react';
 
 class Cart extends React.Component {
   totalPrice = (cartOfBirds) => {
-    return cartOfBirds.reduce((total, bird) => {
-      return (total += bird.amount);
-    }, 0);
+    let total = 0;
+    for (let bird of cartOfBirds) {
+      total += bird.amount;
+    }
+    return total;
   };
 
   displaycartOfBirds = (cartOfBirds, deleter) => {
+    // using idx parameter to take care of the key warnings in console
     return cartOfBirds.map((chosenBird, idx) => {
       return (
         <li key={idx}>
