@@ -1,10 +1,6 @@
 import React from "react";
 
 class BirdCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="bird-card">
