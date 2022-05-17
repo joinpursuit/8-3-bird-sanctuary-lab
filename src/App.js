@@ -1,8 +1,10 @@
-import displaySingleBird from './BirdCard';
+import AllBirds from './AllBirds';
+import Cart from './Cart';
 import birdData from './data/birds.js';
-import { React } from 'react';
-import { render } from '@testing-library/react';
-class App extends React.Component {
+import { Component } from 'react';
+//import { React } from 'react';
+//import { render } from '@testing-library/react';
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,7 +19,14 @@ class App extends React.Component {
   appendToCart = (bird) => {};
   render() {
     const { birds } = this.props;
-    return <main></main>;
+    return (
+      <main>
+        <section></section>
+        <section className='BirdPanel'>
+          <AllBirds birds={birds} appendToCart={this.appendToCart} />
+        </section>
+      </main>
+    );
   }
 }
 export default App;
