@@ -23,28 +23,8 @@ costTotal = (birbsAdopted)=>{
     }, 0)
 };
 
-// bonus = (items, birbsAdopted) => {
-//     const cost = this.costTotal(birbsAdopted);
-//     let itemsEarned = [];
-
-//     if (cost >= 100) {
-//       itemsEarned.push(<li key={items[0]}>{items[0]}</li>);
-//     }
-//     if (cost >= 300) {
-//       itemsEarned.push(<li key={items[1]}>{items[1]}</li>);
-//     }
-//     if (cost >= 500) {
-//       itemsEarned.push(<li key={items[2]}>{items[2]}</li>);
-//     }
-//     if (cost >= 1000) {
-//       itemsEarned.push(<li key={items[3]}>{items[3]}</li>);
-//     }
-
-//     return itemsEarned;
-//   };
-
   render() {
-    const { items, birbsAdopted, removeItemHandler } = this.props;
+    const { items, birbsAdopted, remove } = this.props;
 
     return (
       <div className="Cart">
