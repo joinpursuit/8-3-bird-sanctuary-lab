@@ -1,15 +1,15 @@
 import BirdCard from "./BirdCard";
-import "./birdSection.css";
+import "./BirdSection.css";
 
-function BirdSection({ birds }) {
+function BirdSection({ birds, addToCart }) {
   const birdCards = birds.map((bird) => {
     return (
-      <li className="birds card" key={bird.id}>
-        <BirdCard name={bird.name} amount={bird.amount} img={bird.img} />
+      <li className="birds grid-item" key={bird.id}>
+        <BirdCard bird={bird} handleClick={() => addToCart(bird)} />
       </li>
     );
   });
-  return <ul>{birdCards}</ul>;
+  return <ul className="grid">{birdCards}</ul>;
 }
 
 export default BirdSection;

@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import BirdSection from "./BirdSection";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
@@ -10,14 +11,24 @@ class App extends React.Component {
       cart: [],
     };
   }
+
+  addToCart = (bird) => {
+    console.log(bird.name);
+    const newCart = [...this.state.cart, bird];
+    this.setState({
+      cart: newCart,
+    });
+  };
   render() {
-    const { birds } = this.props;
+    const { birds, bonusItems } = this.props;
     return (
-      <div>
+      <div className="App">
         <h1>Bird Sanctuary</h1>
-        <BirdSection birds={birds} />;
-        <Cart />
-        <Checkout />
+        <div>
+          <BirdSection birds={birds} addToCart={this.addToCart} />;
+          <Cart array={this.state.cart} bonusArray={bonusItems} />
+          <Checkout />
+        </div>
       </div>
     );
   }

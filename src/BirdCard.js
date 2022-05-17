@@ -1,12 +1,17 @@
-import "./birdCard.css";
+import "./BirdCard.css";
 
-const BirdCard = (props) => {
+const BirdCard = ({ bird, handleClick }) => {
+  const { name, img, amount } = bird;
   return (
     <div className="birds card">
-      <h5>{props.name}</h5>
-      <p>{`$${props.amount}`}</p>
-      <img src={props.img} alt={`${props.name}`} />
-      <button>Adopt</button>
+      <section>
+        <h5>{name}</h5>
+        <p>{`$${amount}`}</p>
+        <img src={img} alt={`${name}`} />
+        <button className="button" onClick={handleClick}>
+          Adopt
+        </button>
+      </section>
     </div>
   );
 };
