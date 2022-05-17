@@ -1,6 +1,6 @@
 import React from "react";
 
-class birbCart extends React.Component{
+class Cart extends React.Component{
     birbsAdopted = (adoptBirbs, remItem) => {
         return adoptBirbs.map((adoptedBirb, ind) => {
             return (
