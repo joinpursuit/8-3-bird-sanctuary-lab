@@ -40,13 +40,26 @@ class App extends React.Component {
     }
   }
 
+  removeBirb = (id) => {
+    let birbCopys = [...this.state.birbsInCart];
+    for (let i = 0; i < birbCopys.length; i++) {
+      if (birbCopys[i].id === id) {
+        birbCopys.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({
+      birbsInCart: birbCopys,
+    });
+  };
+
   render(){
-    const {birds, bonusItems,} = this.props 
+    const {birbs, bonusItems,} = this.props 
     return (
     <div className="parent">
       <div className="left">
         <BirdSection birdData={birdData} adoption={this.adoption}/>
-        <Cart bonusItems={bonusItems} birbsInCart={this.state.birbsInCart} />
+        <Cart bonusItems={bonusItems} birbsInCart={this.state.birbsInCart} removeBirb={this.removeBirb}/>
         <Checkout />
         </div>
         <BirdProfile birdData ={this.props} />
