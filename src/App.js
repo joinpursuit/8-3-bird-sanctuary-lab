@@ -56,6 +56,7 @@ class App extends React.Component {
     );
   }
 }
+
 //Have the three components to display and click for customers
 
 

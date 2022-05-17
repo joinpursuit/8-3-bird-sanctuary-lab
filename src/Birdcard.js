@@ -17,4 +17,5 @@ class Birdcard extends React.Component {
     );
   }
 }
+
 export default Birdcard;

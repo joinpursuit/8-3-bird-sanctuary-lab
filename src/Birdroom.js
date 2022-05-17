@@ -16,4 +16,5 @@ class Birdroom extends React.Component {
     return <div className="Birdroom">{furry}</div>;
   }
 }
+
 export default Birdroom;

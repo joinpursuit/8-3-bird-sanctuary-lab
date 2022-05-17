@@ -24,6 +24,7 @@ class Cart extends React.Component {
     });
   };
 
+
   discounter = (cartOfBirds) => {
     let discount = 0;
     if (cartOfBirds.length >= 3) {
@@ -46,5 +47,6 @@ class Cart extends React.Component {
     );
   }
 }
+
 
 export default Cart;

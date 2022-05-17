@@ -64,5 +64,6 @@ class Checkout extends React.Component {
     );
   }
 }
+
 //the user will type their info
 export default Checkout;
