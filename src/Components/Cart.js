@@ -1,5 +1,4 @@
 import React from 'react';
-import birdData from '../data/birds';
 import BirdBox from '../Components/BirdBox';
 
 const Cart = (props) => {
@@ -25,7 +24,7 @@ const Cart = (props) => {
     let bonusArr = [];
     let total = calculateTotal(birds);
 
-    if (total > 1000) {
+    if (total > 100) {
       bonusArr.push(<li>{'Stickers'}</li>);
       bonusArr.push(<li>{'Background for your computer'}</li>);
       bonusArr.push(<li>{'Tote bag'}</li>);
