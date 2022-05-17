@@ -2,13 +2,18 @@ import react from "react";
 
 class Cart extends react.Component {
   render() {
+    let birdsArray = this.props.adoptedBirdsArray;
+    let birdCost = this.props.birdCost;
+
     return (
-      <div className="cart">
+      <div className="Cart">
         <h5>Cart</h5>
         <p>Discount:</p>
-        <p>Total:</p>
+        <h4>Total: ${birdCost}</h4>
         <ol>
-          <li>Bird to Adpot</li>
+          {birdsArray.map((bird) => (
+            <li>{bird}</li>
+          ))}
         </ol>
         <p>Your donations have qualified you for the following items:</p>
         <ul>

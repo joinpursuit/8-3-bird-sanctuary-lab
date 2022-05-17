@@ -15,6 +15,7 @@ class Birds extends react.Component {
               name={bird.name}
               img={bird.img}
               amount={bird.amount}
+              onClick={this.props.onClick}
             />
           );
         })}
