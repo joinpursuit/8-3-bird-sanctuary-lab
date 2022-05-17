@@ -13,7 +13,7 @@ class Checkout extends React.Component {
           <input type="text" id="lastName" name="lastName"></input>
           <label for="email">Email Address</label>
           <input name="email" id="email" type="email"></input>
-          <label for="zip">Zip Code</label>
+          <label for="zipcode">Zip Code</label>
           <input id="zip" name="zip" type="number"></input>
           <br></br>
           <input type="submit" value="Submit" />
