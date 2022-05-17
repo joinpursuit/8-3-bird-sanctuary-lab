@@ -29,10 +29,6 @@ class CartComp extends Component {
   deleteABird = (cartArr, bird) => {
     const index = cartArr.indexOf(bird);
 
-    // if (cartArr.includes(bird)) {
-    //   cartArr.pop(bird);
-    // }
-
     if (index > -1) {
       cartArr.splice(index, 1);
     }
@@ -49,7 +45,11 @@ class CartComp extends Component {
       totalAmount += price.amount;
     }
 
-    return <h4>Total: ${totalAmount}</h4>;
+    if (!Number(totalAmount)) {
+      return <h4>Total: $0</h4>;
+    } else {
+      return <h4>Total: ${totalAmount}</h4>;
+    }
   };
 
   addBonuses = (cartArr) => {
