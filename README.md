@@ -74,7 +74,7 @@ Your react app should be made up of a minimum of 3 components:
 - When there are 3 or more birds in the cart there is a 10% discount
 
 The bonuses come from `src/data/bonusItems.js`
-
+message to display Your donation has qualified you for the following items 
 - The bonus items are added as list items in an `<ul>` list item as follows:
 - 1 bonus (first array item) is given if the total is between 100 and 300
 - 2 bonuses (first and second array items) are given if the total is between 300 and 500
