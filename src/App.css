@@ -1,0 +1,80 @@
+body {}
+header {
+  padding: 3rem 0;text-align: center;
+}
+header h1 {
+  font-size: 4rem;line-height: 4rem; font-weight: bold;letter-spacing: 2px;color: #38a3a5;
+}
+main {
+  width: 80%;margin: auto;
+  display: grid;grid-template-columns: 1fr 3fr;gap: 5px;
+}
+main aside {
+  padding: 0 4rem;
+}
+main aside .Cart {
+  padding: 2rem;border: 1px solid #666;box-shadow: 0px 4px 0px 1px #38a3a5
+}
+main aside .Cart h2 {
+  font-size: 3rem;line-height: 3rem; font-weight: bold; text-align: center; 
+}
+main aside .Cart h4 {
+  font-weight: bold; color: #216869;
+}
+main aside .Cart ol {
+  list-style-type: "→";
+} 
+main aside .Cart ol li { 
+  margin: 0.5rem 0;display: grid;grid-template-columns: 90% 10%;line-height: 38px;
+}
+main aside .Cart ol li button {
+  padding: 0 0px;margin: 0; display: inline-block;font-weight: bold;color: #FFF;background-color: #219ebc;border: none;
+}
+main aside .Cart ol li button:hover {
+  cursor: pointer;
+}
+main aside .Checkout {
+  padding: 2rem;margin: 2rem 0;text-align: center; border: 1px solid #666;box-shadow: 0px 4px 0px 1px #38a3a5   
+}
+main aside .Checkout h2 {
+  font-size: 3rem;line-height: 3rem; font-weight: bold;  
+}
+main aside .Checkout form {
+  padding: 0 20px;text-align: center;
+}
+main aside .Checkout form input {
+  width: 100%;
+}
+main aside .Checkout form input[type=submit] {
+  margin: auto; display: table;color: #FFF;background-color: #38a3a5;border: none;
+}
+main aside .Checkout form input[type=submit]:hover {
+  cursor: pointer;
+}
+main article {
+  margin: 0;display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: repeat(1fr);gap: 20px 50px;
+}
+main article .card {
+  padding: 1rem 1rem;box-sizing: border-box; text-align: center; background-color: #ddfff7;box-shadow: 0px 0px 5px 2px #a4c3b2;border: 10px solid #fff;
+}
+main article .card h4 {
+  font-size: 2rem;line-height: 2rem; font-weight: bold;color: #216869;
+}
+main article .card p {
+  font-size: 1.5rem;line-height: 1.5rem;
+}
+main article .card img {
+  width: 50%;height: 50%; margin: auto;
+}
+main article .card button {
+  width: 80%;margin: 0.5rem auto; display: table; font-size: 1.4rem;color: #FFF;background-color: #93e1d8;box-shadow: 0px 4px 0px 1px #38a3a5
+}
+main article .card button:hover {
+  cursor: pointer;  
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  main {
+    width: 90%;
+  }
+}
