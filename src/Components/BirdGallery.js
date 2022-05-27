@@ -1,14 +1,13 @@
+import Bird from "./Bird"
 
-const BirdGallery = (props) => {
- const { name, img, id, amount } = props
+const BirdGallery = ({birdData, getAdoptedBird}) => {
+ const allBirds = birdData.map((bird) => {
+    return <Bird bird={bird} handleClick={() => getAdoptedBird(bird)}/>
+ })
 
   return (
-      <div id={id} key={`${id}`}>
-          <h4>{name}</h4>
-          <p>Price ${amount}</p>
-          <img src={img} alt={`${name}`}/>
-          <br></br>
-          <button>Adopt</button>
+      <div className="birds">
+          {allBirds}
       </div>
     )
 
