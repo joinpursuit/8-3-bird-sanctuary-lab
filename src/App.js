@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 // import bonusItems from "./data/bonusItems";
-import BirdProfile from "./BirdProfile";
 import Checkout from "./Checkout";
 import Cart from "./Cart";
 import birdData from "./data/birds";
+import BirdsSection from "./BirdsSection";
 
 class App extends React.Component {
 	constructor() {
@@ -14,6 +14,15 @@ class App extends React.Component {
 			birdsInCart: [], //better be some bird objects
 		};
 	}
+	addToCart = (obj) => {
+		//let { value } = event.target;
+
+		// let temp = [];
+		// temp = [...this.state.birdsInCart];
+		// console.log(temp);
+		// temp.push(obj);
+		this.setState({ birdsInCart: [...this.state.birdsInCart, obj] });
+	};
 	render() {
 		return (
 			<div className="parent">
@@ -22,16 +31,7 @@ class App extends React.Component {
 					<Checkout />
 				</div>
 				<section>
-					{birdData.map((element) => {
-						return (
-							<BirdProfile
-								key={element.id}
-								name={element.name}
-								img={element.img}
-								amount={element.amount}
-							/>
-						);
-					})}
+					<BirdsSection birdData={birdData} addToCart={this.addToCart} />
 				</section>
 			</div>
 		);

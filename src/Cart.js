@@ -1,5 +1,4 @@
 import React from "react";
-import birdData from "./data/birds";
 import CartItem from "./CartItem";
 
 export default class Cart extends React.Component {
@@ -11,22 +10,36 @@ export default class Cart extends React.Component {
 		};
 		//this.birds = this.props;
 	}
+	getTotal = (arr) => {
+		let total = 0;
+		for (let element of arr) {
+			total += element.amount;
+		}
+		// this.setState({ total: total.toFixed(2) });
+		return total.toFixed(2);
+	};
 	render() {
+		const { currentCart } = this.props;
 		return (
 			<div className="Cart">
 				<h2>Cart</h2>
 				<ol>
 					<p className="hidden">No items in cart.</p>
-					{/* <CartItem name={birdData[0].name} amount={birdData[0].amount} /> */}
-					{/* {birdData.map((element) => {
+					{/* <CartItem name={element.name} amount={element.amount} /> */}
+					{currentCart.map((element) => {
 						return (
-							<li id={element.id}>
-								{element.name} - ${element.amount}
-							</li>
+							<CartItem
+								key={element.id}
+								name={element.name}
+								amount={element.amount}
+							/>
+							// <li id={element.id}>
+							// 	{element.name} - ${element.amount}
+							// </li>
 						);
-					})} */}
+					})}
 				</ol>
-				<h4>Total: ${this.state.total.toFixed(2)}</h4>
+				<h4>Total: ${this.getTotal(currentCart)}</h4>
 			</div>
 		);
 	}
