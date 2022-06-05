@@ -16,6 +16,9 @@ export default class Cart extends React.Component {
 			total += element.amount;
 		}
 		// this.setState({ total: total.toFixed(2) });
+		if (arr.length >= 3) {
+			total *= 0.9; ///10% discount
+		}
 		return total.toFixed(2);
 	};
 	render() {

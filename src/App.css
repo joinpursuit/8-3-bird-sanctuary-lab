@@ -17,6 +17,7 @@ img {
 button {
 	background-color: darkgreen;
 	justify-content: center;
+	color: white;
 }
 label {
 	text-align: center;
