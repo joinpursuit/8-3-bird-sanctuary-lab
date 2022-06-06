@@ -1,32 +1,16 @@
-import React from "react";
-import "./BirdsInfo";
-import birdData from "./data/birds";
-import BirdsInfoCSSS from "./BirdInfo.css";
+import React from 'react';
+import BirdCardsCss from './BirdInfo.css';
 
-class BirdsInfo extends React.Component {
-    render () {
-        const { bird } = this.props;
-        return (
-            <section>
-          {birdData.map((bird) => {
-               const {name,amount,img,ig} = bird;
-            
-          return(
-              <div id="birds-list">
-            <ul className="card">
-<li>
-            <h3>{name}</h3>
-            <p>${amount}</p>
-            <img src={img} alt="{name}"/>
-            <button type="Submit">Adopt</button>
-            </li>
-            </ul>  
-            </div>
-            )
-          })
-            }
-        </section>
-        );
-    }
+const BirdCards = (props) => {
+    return (
+    <div className="bird-cards">
+    <h4>{props.name}</h4>
+    <p>{props.amount}</p>
+    <img id='bird-pic'src={props.img} alt={`${props.name}`}></img>
+    <button onClick={()=>{props.handleCart(props.bird)}}>Adopt</button>
+
+    </div>
+    )
 }
-export default BirdsInfo;
+
+export default BirdCards;
